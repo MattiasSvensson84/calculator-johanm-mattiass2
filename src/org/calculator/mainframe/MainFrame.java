@@ -23,7 +23,7 @@ public class MainFrame implements ActionListener {
 	private JFormattedTextField frmtdtxtfldNum = new JFormattedTextField();
 	private JFormattedTextField frmtdtxtfldNum_1 = new JFormattedTextField();
 	private JFormattedTextField frmtdtxtfldResult = new JFormattedTextField();
-	private JLabel lblResultLabel = new JLabel("result label");
+	private JLabel lblResultLabel = new JLabel("result label:");
 	/**
 	 * Create the application.
 	 */
