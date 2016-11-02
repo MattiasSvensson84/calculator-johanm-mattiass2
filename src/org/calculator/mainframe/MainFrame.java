@@ -16,9 +16,13 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.SwingConstants;
 
+import org.calculator.classes.AdvancedMethods;
 import org.calculator.classes.BasicMethods;
 
 public class MainFrame implements ActionListener {
+
+	private AdvancedMethods am = new AdvancedMethods();
+	private BasicMethods bm = new BasicMethods();
 
 	private JFrame frame;
 	private JButton btnAddition = new JButton("+");
@@ -26,11 +30,14 @@ public class MainFrame implements ActionListener {
 	private JButton btnMultiplication = new JButton("X");
 	private JButton btnDivision = new JButton("/");
 	private JButton btnClear = new JButton("C");
-	private BasicMethods bm = new BasicMethods();
+	
 	private JFormattedTextField frmtdtxtfldNum = new JFormattedTextField();
 	private JFormattedTextField frmtdtxtfldResult = new JFormattedTextField();
+	
 	private JLabel lblResultLabel = new JLabel("Result: ");
 	private JLabel lblth = new JLabel("1st:");
+	private JLabel lblSecondNumber = new JLabel("2nd:");
+
 	private final JButton btnPi = new JButton("PI");
 	private final JButton btnExp = new JButton("exp");
 	private final JButton btnNewButton = new JButton("pow");
@@ -109,6 +116,18 @@ public class MainFrame implements ActionListener {
 
 		btnClear.setBounds(291, 339, 60, 25);
 		frame.getContentPane().add(btnClear);
+		btnPi.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				try {
+					String firstField = frmtdtxtfldNum.getText();
+					double txt2dbl1 = Double.parseDouble(firstField);
+					double res = am.PI(txt2dbl1);
+					frmtdtxtfldResult.setText(""+res);
+					} catch (Exception a) {
+						a.getMessage();
+					}
+			}
+		});
 		btnPi.setFont(new Font("Tahoma", Font.PLAIN, 10));
 		btnPi.setBounds(12, 225, 50, 25);
 		
@@ -266,7 +285,6 @@ public class MainFrame implements ActionListener {
 			}
 			if (e.getKeyCode() == KeyEvent.VK_DELETE) {
 				frmtdtxtfldNum.setText("");
-				frmtdtxtfldNum_1.setText("");
 				frmtdtxtfldResult.setText("");
 			}
 		}
@@ -356,6 +374,7 @@ public class MainFrame implements ActionListener {
 		}
 		if (e.getSource() == buttonEquals) {
 			equalButtonMethod();
+
 		}
 		
 	}
