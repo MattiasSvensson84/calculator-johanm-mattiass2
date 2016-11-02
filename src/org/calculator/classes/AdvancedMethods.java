@@ -4,7 +4,7 @@ import org.calculator.interfaces.AdvancedOperations;
 
 public class AdvancedMethods extends BasicMethods implements AdvancedOperations{
 
-	public double PI() {
+	public double PI(double num1) {
 		return Math.PI;
 	}
 
@@ -21,11 +21,11 @@ public class AdvancedMethods extends BasicMethods implements AdvancedOperations{
 	}
 
 	public double toRadians(double num1) {
-		return 0;
+		return Math.toRadians(num1);
 	}
 
 	public double toDegrees(double num1) {
-		return 0;
+		return Math.toDegrees(num1);
 	}
 	
 

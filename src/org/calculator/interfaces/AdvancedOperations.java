@@ -1,7 +1,7 @@
 package org.calculator.interfaces;
 
 public interface AdvancedOperations {
-	public double PI();
+	public double PI(double num1);
 	public double pow(double base, double exponent);
 	public double exp(double num1);
 	public double sqrt(double num1);
