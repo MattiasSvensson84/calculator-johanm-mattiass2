@@ -317,7 +317,7 @@ public class MainFrame implements ActionListener {
 			frmtdtxtfldNum.setText("");
 		}
 		if (e.getSource() == buttonEquals) {
-			frmtdtxtfldNum.setText(frmtdtxtfldNum.getText()+"1");
+			frmtdtxtfldNum.setText(frmtdtxtfldNum.getText());
 		}
 		
 	}
