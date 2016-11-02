@@ -151,6 +151,10 @@ public class MainFrame implements ActionListener {
 		buttonEquals.setFocusable(false);
 		btnPi.setFocusable(false);
 		btnSubtraction.setFocusable(false);
+		btnSquare.setFocusable(false);
+		btnToRadians.setFocusable(false);
+		btnPow.setFocusable(false);
+		btnToDegree.setFocusable(false);
 		
 		btnAddition.setBounds(420, 339, 50, 25);
 		btnSubtraction.setBounds(420, 301, 50, 25);
