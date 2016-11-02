@@ -39,7 +39,7 @@ public class MainFrame implements ActionListener {
 
 	private final JButton btnPi = new JButton("PI");
 	private final JButton btnExp = new JButton("exp");
-	private final JButton btnPow = new JButton("pow");
+	private final JButton btnCosh = new JButton("cosh");
 	private final JButton btnSquare = new JButton("sqrt");
 	private final JButton btnToRadians = new JButton("radians");
 	private final JButton btnToDegree = new JButton("degrees");
@@ -52,7 +52,7 @@ public class MainFrame implements ActionListener {
 	private final JButton button7 = new JButton("7");
 	private final JButton button8 = new JButton("8");
 	private final JButton button9 = new JButton("9");
-	private final JButton buttonComma = new JButton(",");
+	private final JButton buttonPeriod = new JButton(".");
 	private final JButton button0 = new JButton("0");
 	private final JButton buttonEquals = new JButton("=");
 	
@@ -93,7 +93,7 @@ public class MainFrame implements ActionListener {
 		frame.getContentPane().add(btnClear);
 		frame.getContentPane().add(btnPi);
 		frame.getContentPane().add(btnExp);
-		frame.getContentPane().add(btnPow);
+		frame.getContentPane().add(btnCosh);
 		frame.getContentPane().add(btnSquare);
 		frame.getContentPane().add(btnToRadians);
 		frame.getContentPane().add(btnToDegree);
@@ -106,7 +106,7 @@ public class MainFrame implements ActionListener {
 		frame.getContentPane().add(button7);
 		frame.getContentPane().add(button8);
 		frame.getContentPane().add(button9);
-		frame.getContentPane().add(buttonComma);
+		frame.getContentPane().add(buttonPeriod);
 		frame.getContentPane().add(button0);
 		frame.getContentPane().add(buttonEquals);
 		frame.getContentPane().add(lblJohanMellin);
@@ -147,13 +147,13 @@ public class MainFrame implements ActionListener {
 		button8.setFocusable(false);
 		button9.setFocusable(false);
 		button0.setFocusable(false);
-		buttonComma.setFocusable(false);
+		buttonPeriod.setFocusable(false);
 		buttonEquals.setFocusable(false);
 		btnPi.setFocusable(false);
 		btnSubtraction.setFocusable(false);
 		btnSquare.setFocusable(false);
 		btnToRadians.setFocusable(false);
-		btnPow.setFocusable(false);
+		btnCosh.setFocusable(false);
 		btnToDegree.setFocusable(false);
 		
 		btnAddition.setBounds(420, 339, 50, 25);
@@ -164,8 +164,8 @@ public class MainFrame implements ActionListener {
 		btnPi.setBounds(12, 225, 50, 25);
 		btnExp.setFont(new Font("Tahoma", Font.PLAIN, 9));
 		btnExp.setBounds(12, 263, 50, 25);
-		btnPow.setFont(new Font("Tahoma", Font.PLAIN, 9));
-		btnPow.setBounds(12, 301, 50, 25);
+		btnCosh.setFont(new Font("Tahoma", Font.PLAIN, 9));
+		btnCosh.setBounds(12, 301, 50, 25);
 		btnSquare.setFont(new Font("Tahoma", Font.PLAIN, 9));
 		btnSquare.setBounds(69, 225, 50, 25);
 		btnToRadians.setFont(new Font("Tahoma", Font.PLAIN, 10));
@@ -181,7 +181,7 @@ public class MainFrame implements ActionListener {
 		button7.setBounds(147, 301, 60, 25);	
 		button8.setBounds(219, 301, 60, 25);	
 		button9.setBounds(291, 301, 60, 25);		
-		buttonComma.setBounds(147, 339, 60, 25);		
+		buttonPeriod.setBounds(147, 339, 60, 25);		
 		button0.setBounds(219, 339, 60, 25);
 		buttonEquals.setBounds(420, 390, 50, 50);
 		btnClear.setBounds(291, 339, 60, 25);
@@ -223,8 +223,8 @@ public class MainFrame implements ActionListener {
 			if (e.getKeyCode() == KeyEvent.VK_0 || e.getKeyCode() == KeyEvent.VK_NUMPAD0) {
 				frmtdtxtfldNum.setText(frmtdtxtfldNum.getText()+"0");
 			}
-			if (e.getKeyCode() == KeyEvent.VK_COMMA) {
-				frmtdtxtfldNum.setText(frmtdtxtfldNum.getText()+",");
+			if (e.getKeyCode() == KeyEvent.VK_PERIOD || e.getKeyCode() == KeyEvent.VK_DECIMAL || e.getKeyCode() == KeyEvent.VK_COMMA) {
+				frmtdtxtfldNum.setText(frmtdtxtfldNum.getText()+".");
 			}
 			if (e.getKeyCode() == KeyEvent.VK_ENTER) {
 				equalButtonMethod();				
@@ -270,11 +270,11 @@ public class MainFrame implements ActionListener {
 		button8.addActionListener(this);
 		button9.addActionListener(this);
 		button0.addActionListener(this);
-		buttonComma.addActionListener(this);
+		buttonPeriod.addActionListener(this);
 		buttonEquals.addActionListener(this);
 		btnExp.addActionListener(this);
 		btnPi.addActionListener(this);
-		btnPow.addActionListener(this);
+		btnCosh.addActionListener(this);
 		btnToDegree.addActionListener(this);
 		btnToRadians.addActionListener(this);
 		btnSquare.addActionListener(this);
@@ -312,21 +312,19 @@ public class MainFrame implements ActionListener {
 				} catch (Exception a) {
 					a.getMessage();
 				}		
-		}
+		} 
 		
-		// Pow dont work 
-		/*
-		if (e.getSource() == btnPow){
+		if (e.getSource() == btnCosh){
 			try {
 				
 				String firstField = frmtdtxtfldNum.getText();
 				double txt2dbl1 = Double.parseDouble(firstField);
-				double res = am.pow(txt2dbl1, );				
+				double res = am.cosh(txt2dbl1);				
 				frmtdtxtfldResult.setText(""+res);
 				} catch (Exception a) {
 					a.getMessage();
 				}	
-		}*/
+		}
 		
 		if (e.getSource() == btnSquare){
 			try {
@@ -403,8 +401,8 @@ public class MainFrame implements ActionListener {
 		if (e.getSource() == button0) {
 			frmtdtxtfldNum.setText(frmtdtxtfldNum.getText()+"0");
 		}
-		if (e.getSource() == buttonComma) {
-			frmtdtxtfldNum.setText(frmtdtxtfldNum.getText()+",");
+		if (e.getSource() == buttonPeriod) {
+			frmtdtxtfldNum.setText(frmtdtxtfldNum.getText()+".");
 		}
 		if (e.getSource() == btnClear) {
 			frmtdtxtfldNum.setText("");

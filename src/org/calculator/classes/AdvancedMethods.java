@@ -9,8 +9,8 @@ public class AdvancedMethods extends BasicMethods implements AdvancedOperations{
 		return Math.PI * num1;
 	}
 
-	public double pow(double base, double exponent) {
-		return Math.pow(base, exponent);
+	public double cosh(double num1) {
+		return Math.cosh(num1);
 	}
 
 	public double exp(double num1) {
