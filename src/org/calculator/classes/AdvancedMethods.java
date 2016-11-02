@@ -5,7 +5,8 @@ import org.calculator.interfaces.AdvancedOperations;
 public class AdvancedMethods extends BasicMethods implements AdvancedOperations{
 
 	public double PI(double num1) {
-		return Math.PI;
+		
+		return Math.PI * num1;
 	}
 
 	public double pow(double base, double exponent) {

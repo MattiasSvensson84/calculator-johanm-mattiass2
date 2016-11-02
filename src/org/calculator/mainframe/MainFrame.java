@@ -39,10 +39,10 @@ public class MainFrame implements ActionListener {
 	
 	private final JButton btnPi = new JButton("PI");
 	private final JButton btnExp = new JButton("exp");
-	private final JButton btnNewButton = new JButton("pow");
-	private final JButton btnNewButton_1 = new JButton("sqrt");
-	private final JButton btnNewButton_2 = new JButton("radians");
-	private final JButton btnNewButton_3 = new JButton("degrees");
+	private final JButton btnPow = new JButton("pow");
+	private final JButton btnSquare = new JButton("sqrt");
+	private final JButton btnToRadians = new JButton("radians");
+	private final JButton btnToDegree = new JButton("degrees");
 	private final JButton button1 = new JButton("1");
 	private final JButton button2 = new JButton("2");
 	private final JButton button3 = new JButton("3");
@@ -75,126 +75,85 @@ public class MainFrame implements ActionListener {
 		frame.setBounds(100, 100, 500, 500);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
+		frame.getContentPane().add(btnAddition);
+		frame.getContentPane().add(btnSubtraction);
+		frame.getContentPane().add(btnMultiplication);
+		frame.getContentPane().add(btnDivision);
+		frame.getContentPane().add(frmtdtxtfldNum);
+		frame.getContentPane().add(frmtdtxtfldNum_1);
+		frame.getContentPane().add(frmtdtxtfldResult);
+		frame.getContentPane().add(lblResultLabel);
+		frame.getContentPane().add(lblSecondNumber);
+		frame.getContentPane().add(lblth);
+		frame.getContentPane().add(btnClear);
+		frame.getContentPane().add(btnPi);
+		frame.getContentPane().add(btnExp);
+		frame.getContentPane().add(btnPow);
+		frame.getContentPane().add(btnSquare);
+		frame.getContentPane().add(btnToRadians);
+		frame.getContentPane().add(btnToDegree);
+		frame.getContentPane().add(button1);
+		frame.getContentPane().add(button2);
+		frame.getContentPane().add(button3);
+		frame.getContentPane().add(button4);
+		frame.getContentPane().add(button5);
+		frame.getContentPane().add(button6);
+		frame.getContentPane().add(button7);
+		frame.getContentPane().add(button8);
+		frame.getContentPane().add(button9);
+		frame.getContentPane().add(buttonComma);
+		frame.getContentPane().add(button0);
+		frame.getContentPane().add(buttonEquals);
+		frame.setVisible(true);
 		
 		btnAddition.setBounds(420, 339, 50, 25);
-		frame.getContentPane().add(btnAddition);
-		
-
 		btnSubtraction.setBounds(420, 301, 50, 25);
-		frame.getContentPane().add(btnSubtraction);
-
 		btnMultiplication.setBounds(420, 263, 50, 25);
-		frame.getContentPane().add(btnMultiplication);
-		
-
 		btnDivision.setBounds(420, 225, 50, 25);
-		frame.getContentPane().add(btnDivision);
-		
+		btnPi.setFont(new Font("Tahoma", Font.PLAIN, 10));
+		btnPi.setBounds(12, 225, 50, 25);
+		btnExp.setFont(new Font("Tahoma", Font.PLAIN, 9));
+		btnExp.setBounds(12, 263, 50, 25);
+		btnPow.setFont(new Font("Tahoma", Font.PLAIN, 9));
+		btnPow.setBounds(12, 301, 50, 25);
+		btnSquare.setFont(new Font("Tahoma", Font.PLAIN, 9));
+		btnSquare.setBounds(69, 225, 50, 25);
+		btnToRadians.setFont(new Font("Tahoma", Font.PLAIN, 10));
+		btnToRadians.setBounds(69, 263, 50, 25);
+		btnToDegree.setFont(new Font("Tahoma", Font.PLAIN, 9));
+		btnToDegree.setBounds(69, 301, 50, 25);
+		button1.setBounds(147, 225, 60, 25);
+		button2.setBounds(219, 225, 60, 25);
+		button3.setBounds(291, 225, 60, 25);
+		button4.setBounds(147, 263, 60, 25);
+		button5.setBounds(219, 263, 60, 25);	
+		button6.setBounds(291, 263, 60, 25);		
+		button7.setBounds(147, 301, 60, 25);	
+		button8.setBounds(219, 301, 60, 25);	
+		button9.setBounds(291, 301, 60, 25);		
+		buttonComma.setBounds(147, 339, 60, 25);		
+		button0.setBounds(219, 339, 60, 25);
+		buttonEquals.setBounds(420, 390, 50, 50);
+		btnClear.setBounds(291, 339, 60, 25);
 
 		frmtdtxtfldNum.setText("");
 		frmtdtxtfldNum.setBounds(70, 50, 360, 30);
-		frame.getContentPane().add(frmtdtxtfldNum);
-		
 		frmtdtxtfldNum_1.setText("");
-		frmtdtxtfldNum_1.setBounds(70, 100, 360, 30);
-		frame.getContentPane().add(frmtdtxtfldNum_1);
+		frmtdtxtfldNum_1.setBounds(70, 100, 360, 30);	
 		frmtdtxtfldResult.setText("");
 		frmtdtxtfldResult.setBounds(70, 143, 360, 30);
-		
-		frame.getContentPane().add(frmtdtxtfldResult);
+				
 		lblResultLabel.setHorizontalAlignment(SwingConstants.RIGHT);
 		lblResultLabel.setBounds(12, 143, 50, 30);
-		
-		frame.getContentPane().add(lblResultLabel);
-		
-
 		lblSecondNumber.setHorizontalAlignment(SwingConstants.RIGHT);
 		lblSecondNumber.setBounds(2, 107, 56, 16);
-		frame.getContentPane().add(lblSecondNumber);
-		
-
 		lblth.setHorizontalAlignment(SwingConstants.RIGHT);
 		lblth.setBounds(6, 57, 56, 16);
-		frame.getContentPane().add(lblth);
+		
 		
 
-		btnClear.setBounds(291, 339, 60, 25);
-		frame.getContentPane().add(btnClear);
-		btnPi.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				try {
-					String firstField = frmtdtxtfldNum.getText();
-					String secondField = frmtdtxtfldNum_1.getText();
-					double txt2dbl1 = Double.parseDouble(firstField);
-					double txt2dbl2 = Double.parseDouble(secondField);
-					double res = am.PI(txt2dbl1);
-					frmtdtxtfldResult.setText(""+res);
-					} catch (Exception a) {
-						a.getMessage();
-					}
-			}
-		});
-		btnPi.setFont(new Font("Tahoma", Font.PLAIN, 10));
-		btnPi.setBounds(12, 225, 50, 25);
+	
 		
-		frame.getContentPane().add(btnPi);
-		btnExp.setFont(new Font("Tahoma", Font.PLAIN, 9));
-		btnExp.setBounds(12, 263, 50, 25);
-		
-		frame.getContentPane().add(btnExp);
-		btnNewButton.setFont(new Font("Tahoma", Font.PLAIN, 9));
-		btnNewButton.setBounds(12, 301, 50, 25);
-		
-		frame.getContentPane().add(btnNewButton);
-		btnNewButton_1.setFont(new Font("Tahoma", Font.PLAIN, 9));
-		btnNewButton_1.setBounds(69, 225, 50, 25);
-		
-		frame.getContentPane().add(btnNewButton_1);
-		btnNewButton_2.setFont(new Font("Tahoma", Font.PLAIN, 10));
-		btnNewButton_2.setBounds(69, 263, 50, 25);
-		
-		frame.getContentPane().add(btnNewButton_2);
-		btnNewButton_3.setFont(new Font("Tahoma", Font.PLAIN, 9));
-		btnNewButton_3.setBounds(69, 301, 50, 25);
-		
-		frame.getContentPane().add(btnNewButton_3);
-		button1.setBounds(147, 225, 60, 25);
-		
-		frame.getContentPane().add(button1);
-		button2.setBounds(219, 225, 60, 25);
-		
-		frame.getContentPane().add(button2);
-		button3.setBounds(291, 225, 60, 25);
-		
-		frame.getContentPane().add(button3);
-		button4.setBounds(147, 263, 60, 25);
-		
-		frame.getContentPane().add(button4);
-		button5.setBounds(219, 263, 60, 25);
-		
-		frame.getContentPane().add(button5);
-		button6.setBounds(291, 263, 60, 25);
-		
-		frame.getContentPane().add(button6);
-		button7.setBounds(147, 301, 60, 25);
-		
-		frame.getContentPane().add(button7);
-		button8.setBounds(219, 301, 60, 25);
-		
-		frame.getContentPane().add(button8);
-		button9.setBounds(291, 301, 60, 25);
-		
-		frame.getContentPane().add(button9);
-		buttonComma.setBounds(147, 339, 60, 25);
-		
-		frame.getContentPane().add(buttonComma);
-		button0.setBounds(219, 339, 60, 25);
-		
-		frame.getContentPane().add(button0);
-		buttonEquals.setBounds(420, 390, 50, 50);
-		
-		frame.getContentPane().add(buttonEquals);
-		frame.setVisible(true);
 	}
 	public void addActionListener() {
 		btnAddition.addActionListener(this);
@@ -214,6 +173,12 @@ public class MainFrame implements ActionListener {
 		button0.addActionListener(this);
 		buttonComma.addActionListener(this);
 		buttonEquals.addActionListener(this);
+		btnExp.addActionListener(this);
+		btnPi.addActionListener(this);
+		btnPow.addActionListener(this);
+		btnToDegree.addActionListener(this);
+		btnToRadians.addActionListener(this);
+		btnSquare.addActionListener(this);
 		
 	}
 
@@ -275,6 +240,74 @@ public class MainFrame implements ActionListener {
 				a.getMessage();
 			}
 		}*/
+		if (e.getSource() == btnExp){
+			try {
+				String firstField = frmtdtxtfldNum.getText();
+				double txt2dbl1 = Double.parseDouble(firstField);
+				double res = am.exp(txt2dbl1);
+				frmtdtxtfldResult.setText(""+res);
+				} catch (Exception a) {
+					a.getMessage();
+				}
+		}
+		
+		if (e.getSource()== btnPi){
+			try {
+				String firstField = frmtdtxtfldNum.getText();
+				double txt2dbl1 = Double.parseDouble(firstField);
+				double res = am.PI(txt2dbl1);
+				frmtdtxtfldResult.setText(""+res);
+				} catch (Exception a) {
+					a.getMessage();
+				}		
+		}
+		
+		if (e.getSource() == btnPow){
+			try {
+				String firstField = frmtdtxtfldNum.getText();
+				String secondField = frmtdtxtfldNum_1.getText();
+				double txt2dbl1 = Double.parseDouble(firstField);
+				double txt2dbl2 = Double.parseDouble(secondField);
+				double res = am.pow(txt2dbl1, txt2dbl2);				
+				frmtdtxtfldResult.setText(""+res);
+				} catch (Exception a) {
+					a.getMessage();
+				}	
+		}
+		
+		if (e.getSource() == btnSquare){
+			try {
+				String firstField = frmtdtxtfldNum.getText();
+				double txt2dbl1 = Double.parseDouble(firstField);
+				double res = am.sqrt(txt2dbl1);
+				frmtdtxtfldResult.setText(""+res);
+				} catch (Exception a) {
+					a.getMessage();
+				}
+		}
+			
+		if (e.getSource() == btnToDegree){
+			try {
+				String firstField = frmtdtxtfldNum.getText();
+				double txt2dbl1 = Double.parseDouble(firstField);
+				double res = am.toDegrees(txt2dbl1);
+				frmtdtxtfldResult.setText(""+res);
+				} catch (Exception a) {
+					a.getMessage();
+				}	
+		}
+		
+		if (e.getSource() == btnToRadians){
+			try {
+				String firstField = frmtdtxtfldNum.getText();
+				double txt2dbl1 = Double.parseDouble(firstField);
+				double res = am.toRadians(txt2dbl1);
+				frmtdtxtfldResult.setText(""+res);
+				} catch (Exception a) {
+					a.getMessage();
+				}
+		}
+		
 		if (e.getSource() == btnAddition) {
 			frmtdtxtfldNum.setText(frmtdtxtfldNum.getText()+"+");
 		}
