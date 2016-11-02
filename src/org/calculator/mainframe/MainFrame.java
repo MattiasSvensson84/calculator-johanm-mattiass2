@@ -34,18 +34,18 @@ public class MainFrame implements ActionListener {
 	private final JButton btnNewButton_1 = new JButton("sqrt");
 	private final JButton btnNewButton_2 = new JButton("radians");
 	private final JButton btnNewButton_3 = new JButton("degrees");
-	private final JButton button = new JButton("1");
-	private final JButton button_1 = new JButton("2");
-	private final JButton button_2 = new JButton("3");
-	private final JButton button_3 = new JButton("4");
-	private final JButton button_4 = new JButton("5");
-	private final JButton button_5 = new JButton("6");
-	private final JButton button_6 = new JButton("7");
-	private final JButton button_7 = new JButton("8");
-	private final JButton button_8 = new JButton("9");
-	private final JButton button_9 = new JButton(",");
-	private final JButton button_10 = new JButton("0");
-	private final JButton button_11 = new JButton("=");
+	private final JButton button1 = new JButton("1");
+	private final JButton button2 = new JButton("2");
+	private final JButton button3 = new JButton("3");
+	private final JButton button4 = new JButton("4");
+	private final JButton button5 = new JButton("5");
+	private final JButton button6 = new JButton("6");
+	private final JButton button7 = new JButton("7");
+	private final JButton button8 = new JButton("8");
+	private final JButton button9 = new JButton("9");
+	private final JButton buttonComma = new JButton(",");
+	private final JButton button0 = new JButton("0");
+	private final JButton buttonEquals = new JButton("=");
 	/**
 	 * Create the application.
 	 */
@@ -69,9 +69,6 @@ public class MainFrame implements ActionListener {
 
 		btnSubtraction.setBounds(420, 301, 50, 25);
 		frame.getContentPane().add(btnSubtraction);
-		
-
-		btnMultiplication.setVerticalAlignment(SwingConstants.TOP);
 
 		btnMultiplication.setBounds(420, 263, 50, 25);
 		frame.getContentPane().add(btnMultiplication);
@@ -134,42 +131,42 @@ public class MainFrame implements ActionListener {
 		btnNewButton_3.setBounds(69, 301, 50, 25);
 		
 		frame.getContentPane().add(btnNewButton_3);
-		button.setBounds(147, 225, 60, 25);
+		button1.setBounds(147, 225, 60, 25);
 		
-		frame.getContentPane().add(button);
-		button_1.setBounds(219, 225, 60, 25);
+		frame.getContentPane().add(button1);
+		button2.setBounds(219, 225, 60, 25);
 		
-		frame.getContentPane().add(button_1);
-		button_2.setBounds(291, 225, 60, 25);
+		frame.getContentPane().add(button2);
+		button3.setBounds(291, 225, 60, 25);
 		
-		frame.getContentPane().add(button_2);
-		button_3.setBounds(147, 263, 60, 25);
+		frame.getContentPane().add(button3);
+		button4.setBounds(147, 263, 60, 25);
 		
-		frame.getContentPane().add(button_3);
-		button_4.setBounds(219, 263, 60, 25);
+		frame.getContentPane().add(button4);
+		button5.setBounds(219, 263, 60, 25);
 		
-		frame.getContentPane().add(button_4);
-		button_5.setBounds(291, 263, 60, 25);
+		frame.getContentPane().add(button5);
+		button6.setBounds(291, 263, 60, 25);
 		
-		frame.getContentPane().add(button_5);
-		button_6.setBounds(147, 301, 60, 25);
+		frame.getContentPane().add(button6);
+		button7.setBounds(147, 301, 60, 25);
 		
-		frame.getContentPane().add(button_6);
-		button_7.setBounds(219, 301, 60, 25);
+		frame.getContentPane().add(button7);
+		button8.setBounds(219, 301, 60, 25);
 		
-		frame.getContentPane().add(button_7);
-		button_8.setBounds(291, 301, 60, 25);
+		frame.getContentPane().add(button8);
+		button9.setBounds(291, 301, 60, 25);
 		
-		frame.getContentPane().add(button_8);
-		button_9.setBounds(147, 339, 60, 25);
+		frame.getContentPane().add(button9);
+		buttonComma.setBounds(147, 339, 60, 25);
 		
-		frame.getContentPane().add(button_9);
-		button_10.setBounds(219, 339, 60, 25);
+		frame.getContentPane().add(buttonComma);
+		button0.setBounds(219, 339, 60, 25);
 		
-		frame.getContentPane().add(button_10);
-		button_11.setBounds(420, 390, 50, 50);
+		frame.getContentPane().add(button0);
+		buttonEquals.setBounds(420, 390, 50, 50);
 		
-		frame.getContentPane().add(button_11);
+		frame.getContentPane().add(buttonEquals);
 		frame.setVisible(true);
 	}
 	public void addActionListener() {
@@ -178,6 +175,18 @@ public class MainFrame implements ActionListener {
 		btnMultiplication.addActionListener(this);
 		btnDivision.addActionListener(this);
 		btnClear.addActionListener(this);
+		button1.addActionListener(this);
+		button2.addActionListener(this);
+		button3.addActionListener(this);
+		button4.addActionListener(this);
+		button5.addActionListener(this);
+		button6.addActionListener(this);
+		button7.addActionListener(this);
+		button8.addActionListener(this);
+		button9.addActionListener(this);
+		button0.addActionListener(this);
+		buttonComma.addActionListener(this);
+		buttonEquals.addActionListener(this);
 		
 	}
 
@@ -241,7 +250,54 @@ public class MainFrame implements ActionListener {
 		}*/
 		if (e.getSource() == btnAddition) {
 			frmtdtxtfldNum.setText(frmtdtxtfldNum.getText()+"+");
-			
+		}
+		if (e.getSource() == btnSubtraction) {
+			frmtdtxtfldNum.setText(frmtdtxtfldNum.getText()+"-");
+		}
+		if (e.getSource() == btnMultiplication) {
+			frmtdtxtfldNum.setText(frmtdtxtfldNum.getText()+"*");
+		}
+		if (e.getSource() == btnDivision) {
+			frmtdtxtfldNum.setText(frmtdtxtfldNum.getText()+"/");
+		}
+		if (e.getSource() == button1) {
+			frmtdtxtfldNum.setText(frmtdtxtfldNum.getText()+"1");
+		}
+		if (e.getSource() == button2) {
+			frmtdtxtfldNum.setText(frmtdtxtfldNum.getText()+"2");
+		}
+		if (e.getSource() == button3) {
+			frmtdtxtfldNum.setText(frmtdtxtfldNum.getText()+"3");
+		}
+		if (e.getSource() == button4) {
+			frmtdtxtfldNum.setText(frmtdtxtfldNum.getText()+"4");
+		}
+		if (e.getSource() == button5) {
+			frmtdtxtfldNum.setText(frmtdtxtfldNum.getText()+"5");
+		}
+		if (e.getSource() == button6) {
+			frmtdtxtfldNum.setText(frmtdtxtfldNum.getText()+"6");
+		}
+		if (e.getSource() == button7) {
+			frmtdtxtfldNum.setText(frmtdtxtfldNum.getText()+"7");
+		}
+		if (e.getSource() == button8) {
+			frmtdtxtfldNum.setText(frmtdtxtfldNum.getText()+"8");
+		}
+		if (e.getSource() == button9) {
+			frmtdtxtfldNum.setText(frmtdtxtfldNum.getText()+"9");
+		}
+		if (e.getSource() == button0) {
+			frmtdtxtfldNum.setText(frmtdtxtfldNum.getText()+"0");
+		}
+		if (e.getSource() == buttonComma) {
+			frmtdtxtfldNum.setText(frmtdtxtfldNum.getText()+",");
+		}
+		if (e.getSource() == btnClear) {
+			frmtdtxtfldNum.setText("");
+		}
+		if (e.getSource() == buttonEquals) {
+			frmtdtxtfldNum.setText(frmtdtxtfldNum.getText()+"1");
 		}
 		
 	}
