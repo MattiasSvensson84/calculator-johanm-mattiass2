@@ -1,18 +1,21 @@
 package org.calculator.mainframe;
 
+import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.beans.Expression;
 
+import javax.script.ScriptEngine;
+import javax.script.ScriptEngineManager;
 import javax.swing.JButton;
 import javax.swing.JFormattedTextField;
 import javax.swing.JFrame;
-import javax.swing.JTextField;
+import javax.swing.JLabel;
 import javax.swing.SwingConstants;
+import javax.swing.text.html.parser.Parser;
 
 import org.calculator.classes.AdvancedMethods;
 import org.calculator.classes.BasicMethods;
-import javax.swing.JLabel;
-import java.awt.Font;
 
 public class MainFrame implements ActionListener {
 
@@ -52,6 +55,10 @@ public class MainFrame implements ActionListener {
 	private final JButton buttonComma = new JButton(",");
 	private final JButton button0 = new JButton("0");
 	private final JButton buttonEquals = new JButton("=");
+	private ScriptEngineManager manager = new ScriptEngineManager();
+	private ScriptEngine engine = manager.getEngineByName("js"); 
+	private double mathResult = 0;
+	private String mathInputString;
 	/**
 	 * Create the application.
 	 */
@@ -317,7 +324,8 @@ public class MainFrame implements ActionListener {
 			frmtdtxtfldNum.setText("");
 		}
 		if (e.getSource() == buttonEquals) {
-			frmtdtxtfldNum.setText(frmtdtxtfldNum.getText());
+			mathInputString = frmtdtxtfldNum.getText();
+			//Expression expr = Parser.parse(mathInputString);
 		}
 		
 	}
