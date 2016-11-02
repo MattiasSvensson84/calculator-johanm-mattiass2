@@ -35,7 +35,7 @@ public class MainFrame implements ActionListener {
 	private JFormattedTextField frmtdtxtfldResult = new JFormattedTextField();
 	
 	private JLabel lblResultLabel = new JLabel("Result: ");
-	private JLabel lblth = new JLabel("1st:");
+	private JLabel lblth = new JLabel("Inquiry:");
 
 	private final JButton btnPi = new JButton("PI");
 	private final JButton btnExp = new JButton("exp");
