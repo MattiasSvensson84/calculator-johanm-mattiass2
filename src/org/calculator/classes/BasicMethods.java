@@ -16,7 +16,7 @@ public class BasicMethods implements BasicOperations{
 	public double division (double firstNumber, double secondNumber){
 		double result = firstNumber / secondNumber;
 		if (Double.isInfinite(result)){
-			System.out.println("Something wrong with the operation! "+"Maybe you tried to divide by");
+			System.out.println("Something wrong with the operation! "+"Maybe you tried to divide by 0?");
 			return -0.123456789;
 		} else {
 			return firstNumber / secondNumber;
