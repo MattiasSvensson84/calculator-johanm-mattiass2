@@ -1,9 +1,12 @@
 package org.calculator.mainframe;
 
 import java.awt.Font;
+import java.awt.KeyEventDispatcher;
+import java.awt.KeyboardFocusManager;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.beans.Expression;
+import java.awt.event.KeyAdapter;
+import java.awt.event.KeyEvent;
 
 import javax.script.ScriptEngine;
 import javax.script.ScriptEngineManager;
@@ -12,7 +15,6 @@ import javax.swing.JFormattedTextField;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.SwingConstants;
-import javax.swing.text.html.parser.Parser;
 
 import org.calculator.classes.BasicMethods;
 
@@ -49,10 +51,12 @@ public class MainFrame implements ActionListener {
 	private final JButton buttonComma = new JButton(",");
 	private final JButton button0 = new JButton("0");
 	private final JButton buttonEquals = new JButton("=");
+	
 	private ScriptEngineManager manager = new ScriptEngineManager();
-	private ScriptEngine engine = manager.getEngineByName("js"); 
-	private double mathResult = 0;
+	private ScriptEngine engine = manager.getEngineByName("js");
 	private String mathInputString;
+	private Object result;
+	private KeyboardFocusManager manager2 = KeyboardFocusManager.getCurrentKeyboardFocusManager();
 	/**
 	 * Create the application.
 	 */
@@ -174,7 +178,111 @@ public class MainFrame implements ActionListener {
 		buttonEquals.setBounds(420, 390, 50, 50);
 		
 		frame.getContentPane().add(buttonEquals);
+		manager2.addKeyEventDispatcher(new MyDispatcher());
+		frmtdtxtfldNum.setFocusable(false);
+		frmtdtxtfldNum_1.setFocusable(false);
+		frmtdtxtfldResult.setFocusable(false);
+		btnAddition.setFocusable(false);
+		btnClear.setFocusable(false);
+		btnDivision.setFocusable(false);
+		btnExp.setFocusable(false);
+		btnMultiplication.setFocusable(false);
+		btnNewButton.setFocusable(false);
+		btnNewButton_1.setFocusable(false);
+		btnNewButton_2.setFocusable(false);
+		btnNewButton_3.setFocusable(false);
+		button1.setFocusable(false);
+		button2.setFocusable(false);
+		button3.setFocusable(false);
+		button4.setFocusable(false);
+		button5.setFocusable(false);
+		button6.setFocusable(false);
+		button7.setFocusable(false);
+		button8.setFocusable(false);
+		button9.setFocusable(false);
+		button0.setFocusable(false);
+		buttonComma.setFocusable(false);
+		buttonEquals.setFocusable(false);
+		btnPi.setFocusable(false);
+		btnSubtraction.setFocusable(false);
 		frame.setVisible(true);
+	}
+/*	public void addKeyListener() {
+		button1.addKeyListener(new KeyAdapter() {
+			public void keyPressed(KeyEvent e) {
+				int key = e.getKeyCode();
+				if (key == KeyEvent.VK_1) {
+					frmtdtxtfldNum.setText(frmtdtxtfldNum.getText()+"1");					
+				}
+			}
+
+		});
+	}*/
+	public class MyDispatcher implements KeyEventDispatcher {
+
+	public boolean dispatchKeyEvent(KeyEvent e) {
+		if (e.getID() == KeyEvent.KEY_PRESSED) {
+			if (e.getKeyCode() == KeyEvent.VK_1 || e.getKeyCode() == KeyEvent.VK_NUMPAD1) {
+				frmtdtxtfldNum.setText(frmtdtxtfldNum.getText()+"1");
+			}
+			if (e.getKeyCode() == KeyEvent.VK_2 || e.getKeyCode() == KeyEvent.VK_NUMPAD2) {
+				frmtdtxtfldNum.setText(frmtdtxtfldNum.getText()+"2");
+			}
+			if (e.getKeyCode() == KeyEvent.VK_3 || e.getKeyCode() == KeyEvent.VK_NUMPAD3) {
+				frmtdtxtfldNum.setText(frmtdtxtfldNum.getText()+"3");
+			}
+			if (e.getKeyCode() == KeyEvent.VK_4 || e.getKeyCode() == KeyEvent.VK_NUMPAD4) {
+				frmtdtxtfldNum.setText(frmtdtxtfldNum.getText()+"4");
+			}
+			if (e.getKeyCode() == KeyEvent.VK_5 || e.getKeyCode() == KeyEvent.VK_NUMPAD5) {
+				frmtdtxtfldNum.setText(frmtdtxtfldNum.getText()+"5");
+			}
+			if (e.getKeyCode() == KeyEvent.VK_6 || e.getKeyCode() == KeyEvent.VK_NUMPAD6) {
+				frmtdtxtfldNum.setText(frmtdtxtfldNum.getText()+"6");
+			}
+			if (e.getKeyCode() == KeyEvent.VK_7 || e.getKeyCode() == KeyEvent.VK_NUMPAD7) {
+				frmtdtxtfldNum.setText(frmtdtxtfldNum.getText()+"7");
+			}
+			if (e.getKeyCode() == KeyEvent.VK_8 || e.getKeyCode() == KeyEvent.VK_NUMPAD8) {
+				frmtdtxtfldNum.setText(frmtdtxtfldNum.getText()+"8");
+			}
+			if (e.getKeyCode() == KeyEvent.VK_9 || e.getKeyCode() == KeyEvent.VK_NUMPAD9) {
+				frmtdtxtfldNum.setText(frmtdtxtfldNum.getText()+"9");
+			}
+			if (e.getKeyCode() == KeyEvent.VK_0 || e.getKeyCode() == KeyEvent.VK_NUMPAD0) {
+				frmtdtxtfldNum.setText(frmtdtxtfldNum.getText()+"0");
+			}
+			if (e.getKeyCode() == KeyEvent.VK_COMMA) {
+				frmtdtxtfldNum.setText(frmtdtxtfldNum.getText()+",");
+			}
+			if (e.getKeyCode() == KeyEvent.VK_ENTER) {
+				equalButtonMethod();				
+			}
+			if (e.getKeyCode() == KeyEvent.VK_PLUS || e.getKeyCode() == KeyEvent.VK_ADD) {
+				frmtdtxtfldNum.setText(frmtdtxtfldNum.getText()+"+");
+			}
+			if (e.getKeyCode() == KeyEvent.VK_MINUS || e.getKeyCode() == KeyEvent.VK_SUBTRACT) {
+				frmtdtxtfldNum.setText(frmtdtxtfldNum.getText()+"-");
+			}
+			if (e.getKeyCode() == KeyEvent.VK_MULTIPLY) {
+				frmtdtxtfldNum.setText(frmtdtxtfldNum.getText()+"*");
+			}
+			if (e.getKeyCode() == KeyEvent.VK_DIVIDE) {
+				frmtdtxtfldNum.setText(frmtdtxtfldNum.getText()+"/");
+			}
+			if (e.getKeyCode() == KeyEvent.VK_BACK_SPACE) {
+				frmtdtxtfldNum.setText("");
+			}
+			if (e.getKeyCode() == KeyEvent.VK_DELETE) {
+				frmtdtxtfldNum.setText("");
+				frmtdtxtfldNum_1.setText("");
+				frmtdtxtfldResult.setText("");
+			}
+		}
+		
+		return false;
+	}
+		
 	}
 	public void addActionListener() {
 		btnAddition.addActionListener(this);
@@ -195,6 +303,15 @@ public class MainFrame implements ActionListener {
 		buttonComma.addActionListener(this);
 		buttonEquals.addActionListener(this);
 		
+	}
+	public void equalButtonMethod () {
+		mathInputString = frmtdtxtfldNum.getText();
+		try {
+			result = engine.eval(mathInputString);
+			frmtdtxtfldResult.setText(""+result);
+		} catch(Exception s) {
+			s.getMessage();
+		}
 	}
 
 	public void actionPerformed(ActionEvent e) {
@@ -304,8 +421,7 @@ public class MainFrame implements ActionListener {
 			frmtdtxtfldNum.setText("");
 		}
 		if (e.getSource() == buttonEquals) {
-			mathInputString = frmtdtxtfldNum.getText();
-			Expression expr = Parser.parse(mathInputString);
+			equalButtonMethod();
 		}
 		
 	}
