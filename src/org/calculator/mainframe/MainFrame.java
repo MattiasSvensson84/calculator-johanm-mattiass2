@@ -28,11 +28,9 @@ public class MainFrame implements ActionListener {
 	private JButton btnClear = new JButton("C");
 	private BasicMethods bm = new BasicMethods();
 	private JFormattedTextField frmtdtxtfldNum = new JFormattedTextField();
-	private JFormattedTextField frmtdtxtfldNum_1 = new JFormattedTextField();
 	private JFormattedTextField frmtdtxtfldResult = new JFormattedTextField();
 	private JLabel lblResultLabel = new JLabel("Result: ");
 	private JLabel lblth = new JLabel("1st:");
-	private JLabel lblSecondNumber = new JLabel("2nd:");
 	private final JButton btnPi = new JButton("PI");
 	private final JButton btnExp = new JButton("exp");
 	private final JButton btnNewButton = new JButton("pow");
@@ -57,6 +55,8 @@ public class MainFrame implements ActionListener {
 	private String mathInputString;
 	private Object result;
 	private KeyboardFocusManager manager2 = KeyboardFocusManager.getCurrentKeyboardFocusManager();
+	private final JLabel lblJohanMellin = new JLabel("Johan Mellin & Mattias Svensson Instruments");
+	private final JLabel lblInstruments = new JLabel("Calculator");
 	/**
 	 * Create the application.
 	 */
@@ -90,12 +90,8 @@ public class MainFrame implements ActionListener {
 		
 
 		frmtdtxtfldNum.setText("");
-		frmtdtxtfldNum.setBounds(70, 50, 360, 30);
+		frmtdtxtfldNum.setBounds(70, 100, 360, 30);
 		frame.getContentPane().add(frmtdtxtfldNum);
-		
-		frmtdtxtfldNum_1.setText("");
-		frmtdtxtfldNum_1.setBounds(70, 100, 360, 30);
-		frame.getContentPane().add(frmtdtxtfldNum_1);
 		frmtdtxtfldResult.setText("");
 		frmtdtxtfldResult.setBounds(70, 143, 360, 30);
 		
@@ -106,13 +102,8 @@ public class MainFrame implements ActionListener {
 		frame.getContentPane().add(lblResultLabel);
 		
 
-		lblSecondNumber.setHorizontalAlignment(SwingConstants.RIGHT);
-		lblSecondNumber.setBounds(2, 107, 56, 16);
-		frame.getContentPane().add(lblSecondNumber);
-		
-
 		lblth.setHorizontalAlignment(SwingConstants.RIGHT);
-		lblth.setBounds(6, 57, 56, 16);
+		lblth.setBounds(6, 107, 56, 16);
 		frame.getContentPane().add(lblth);
 		
 
@@ -180,7 +171,6 @@ public class MainFrame implements ActionListener {
 		frame.getContentPane().add(buttonEquals);
 		manager2.addKeyEventDispatcher(new MyDispatcher());
 		frmtdtxtfldNum.setFocusable(false);
-		frmtdtxtfldNum_1.setFocusable(false);
 		frmtdtxtfldResult.setFocusable(false);
 		btnAddition.setFocusable(false);
 		btnClear.setFocusable(false);
@@ -205,19 +195,20 @@ public class MainFrame implements ActionListener {
 		buttonEquals.setFocusable(false);
 		btnPi.setFocusable(false);
 		btnSubtraction.setFocusable(false);
+		lblJohanMellin.setVerticalAlignment(SwingConstants.TOP);
+		lblJohanMellin.setHorizontalAlignment(SwingConstants.LEFT);
+		lblJohanMellin.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		lblJohanMellin.setBounds(12, 13, 300, 30);
+		
+		frame.getContentPane().add(lblJohanMellin);
+		lblInstruments.setFont(new Font("Tahoma", Font.PLAIN, 24));
+		lblInstruments.setVerticalAlignment(SwingConstants.BOTTOM);
+		lblInstruments.setHorizontalAlignment(SwingConstants.RIGHT);
+		lblInstruments.setBounds(120, 57, 350, 30);
+		
+		frame.getContentPane().add(lblInstruments);
 		frame.setVisible(true);
 	}
-/*	public void addKeyListener() {
-		button1.addKeyListener(new KeyAdapter() {
-			public void keyPressed(KeyEvent e) {
-				int key = e.getKeyCode();
-				if (key == KeyEvent.VK_1) {
-					frmtdtxtfldNum.setText(frmtdtxtfldNum.getText()+"1");					
-				}
-			}
-
-		});
-	}*/
 	public class MyDispatcher implements KeyEventDispatcher {
 
 	public boolean dispatchKeyEvent(KeyEvent e) {
@@ -315,63 +306,6 @@ public class MainFrame implements ActionListener {
 	}
 
 	public void actionPerformed(ActionEvent e) {
-	/*	if (e.getSource() == btnAddition) {
-			try {
-			String firstField = frmtdtxtfldNum.getText();
-			String secondField = frmtdtxtfldNum_1.getText();
-			double txt2dbl1 = Double.parseDouble(firstField);
-			double txt2dbl2 = Double.parseDouble(secondField);
-			double res = bm.add(txt2dbl1, txt2dbl2);
-			frmtdtxtfldResult.setText(""+res);
-			} catch (Exception a) {
-				a.getMessage();
-			}
-		}
-		if (e.getSource() == btnSubtraction) {
-			try {
-			String firstField = frmtdtxtfldNum.getText();
-			String secondField = frmtdtxtfldNum_1.getText();
-			double txt2dbl1 = Double.parseDouble(firstField);
-			double txt2dbl2 = Double.parseDouble(secondField);
-			double res = bm.subtract(txt2dbl1, txt2dbl2);
-			frmtdtxtfldResult.setText(""+res);
-			} catch (Exception a) {
-				a.getMessage();
-			}
-		}
-		if (e.getSource() == btnMultiplication) {
-			try {
-			String firstField = frmtdtxtfldNum.getText();
-			String secondField = frmtdtxtfldNum_1.getText();
-			double txt2dbl1 = Double.parseDouble(firstField);
-			double txt2dbl2 = Double.parseDouble(secondField);
-			double res = bm.multiplication(txt2dbl1, txt2dbl2);
-			frmtdtxtfldResult.setText(""+res);
-			} catch (Exception a) {
-				a.getMessage();
-			}
-		}
-		if (e.getSource() == btnDivision) {
-			try {
-			String firstField = frmtdtxtfldNum.getText();
-			String secondField = frmtdtxtfldNum_1.getText();
-			double txt2dbl1 = Double.parseDouble(firstField);
-			double txt2dbl2 = Double.parseDouble(secondField);
-			double res = bm.division(txt2dbl1, txt2dbl2);
-			frmtdtxtfldResult.setText(""+res);
-			} catch (Exception a) {
-				a.getMessage();
-			}
-		}
-		if (e.getSource() == btnClear) {
-			try {
-				frmtdtxtfldNum.setText("");
-				frmtdtxtfldNum_1.setText("");
-				frmtdtxtfldResult.setText("");
-			} catch (Exception a) {
-				a.getMessage();
-			}
-		}*/
 		if (e.getSource() == btnAddition) {
 			frmtdtxtfldNum.setText(frmtdtxtfldNum.getText()+"+");
 		}
