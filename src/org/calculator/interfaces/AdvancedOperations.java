@@ -1,5 +1,7 @@
 package org.calculator.interfaces;
-
+/**
+ * Here we build the interface which carries the advanced operations we want to implement.
+ */
 public interface AdvancedOperations {
 	public double PI(double num1);
 	public double cosh(double num1);

@@ -1,11 +1,6 @@
 package org.calculator.interfaces;
 /**
- * 
- * @author Johan Melin
- *
- */
-/**
- * Interface for basic operations that we want to implement
+ * Here we build the interface which carries the basic operations we want to implement.
  */
 public interface BasicOperations {
 	public double add(double firstNumber, double secondNumber);
