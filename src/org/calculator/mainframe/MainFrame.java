@@ -20,6 +20,9 @@ import org.calculator.classes.AdvancedMethods;
 import org.calculator.classes.BasicMethods;
 
 public class MainFrame implements ActionListener {
+	/**
+	 * Here we declarates all the content that the GUI and program is built by. 
+	 */
 
 	private AdvancedMethods am = new AdvancedMethods();
 	private BasicMethods bm = new BasicMethods();
@@ -64,7 +67,7 @@ public class MainFrame implements ActionListener {
 	private final JLabel lblJohanMellin = new JLabel("Johan Mellin & Mattias Svensson Instruments");
 	private final JLabel lblInstruments = new JLabel("Calculator");
 	/**
-	 * Create the application.
+	 * Här instansierar vi MainFrame med de innehåll vi vill bygga upp programmet med.
 	 */
 	public MainFrame() {
 		initialize();
@@ -72,7 +75,7 @@ public class MainFrame implements ActionListener {
 	}
 
 	/**
-	 * Initialize the contents of the frame.
+	 * Här bygger vi upp själva GUIn av programmet.
 	 */
 	private void initialize() {
 		
@@ -189,6 +192,11 @@ public class MainFrame implements ActionListener {
 		frame.setVisible(true);	
 		
 	}
+	/**
+	 * Här bygger vi en ny klass för att fånga tangenter som trycks ner av användaren för att kunna styra programmet.
+	 * @author waxns
+	 *
+	 */
 	public class MyDispatcher implements KeyEventDispatcher {
 
 	public boolean dispatchKeyEvent(KeyEvent e) {
@@ -254,6 +262,9 @@ public class MainFrame implements ActionListener {
 	}
 		
 	}
+	/**
+	 * Här ser vi till att knapparna får en listener och vet att den ska agera när den blir tryckt/aktiveras.
+	 */
 	public void addActionListener() {
 		btnAddition.addActionListener(this);
 		btnSubtraction.addActionListener(this);
@@ -280,6 +291,9 @@ public class MainFrame implements ActionListener {
 		btnSquare.addActionListener(this);
 		
 	}
+	/**
+	 * Denna metod räknar ut den matematiska fråga som skrivit i "Inquiry-fältet" (formatted text field).
+	 */
 	public void equalButtonMethod () {
 		mathInputString = frmtdtxtfldNum.getText();
 		try {
@@ -289,7 +303,10 @@ public class MainFrame implements ActionListener {
 			s.getMessage();
 		}
 	}
-
+	
+	/**
+	 * Här skapar vi reaktionen som den nedtryckta knappen ska återge.
+	 */
 	public void actionPerformed(ActionEvent e) {
 
 		if (e.getSource() == btnExp){

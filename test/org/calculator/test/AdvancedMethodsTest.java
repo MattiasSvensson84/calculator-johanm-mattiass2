@@ -9,12 +9,20 @@ import java.util.logging.Logger;
 import org.calculator.classes.AdvancedMethods;
 import org.junit.Test;
 
+/**
+ * Här bygger vi testfunktionerna som ska testa metoderna i AdvancedMethods.
+ * @author waxns
+ *
+ */
 public class AdvancedMethodsTest {
 	AdvancedMethods am = new AdvancedMethods();
 	public static final Logger LOG = Logger.getLogger(AdvancedMethods.class.getName());
 	Random random = new Random();
 	DecimalFormat df = new DecimalFormat("#,###");
 	
+	/**
+	 * Här testar vi PI med ett positivt random-nummer.
+	 */
 	@Test
 	public void testPIPositiveNumber() {
 		double num1 = 0;
@@ -27,6 +35,9 @@ public class AdvancedMethodsTest {
 			assertEquals(Math.round(am.PI(num1)), Math.round(result));
 		}
 	}
+	/**
+	 * Här testar vi PI med ett negativt random-nummer.
+	 */
 	@Test
 	public void testPINegativeNumber() {
 		double num1 = 0;
@@ -39,6 +50,9 @@ public class AdvancedMethodsTest {
 			assertEquals(Math.round(am.PI(num1)), Math.round(result));
 		}		
 	}
+	/**
+	 * Här testar vi Cosh med ett positivt random-nummer.
+	 */
 	@Test
 	public void testCoshPositiveNumber() {
 		double num1 = 0;
@@ -51,6 +65,9 @@ public class AdvancedMethodsTest {
 			assertEquals(Math.round(am.cosh(num1)), Math.round(result));
 		}
 	}
+	/**
+	 * Här testar vi Cosh med ett negativt random-nummer.
+	 */
 	@Test
 	public void testCoshNegativeNumber() {
 		double num1 = 0;
@@ -63,6 +80,9 @@ public class AdvancedMethodsTest {
 			assertEquals(Math.round(am.cosh(num1)), Math.round(result));
 		}
 	}
+	/**
+	 * Här testar vi Exp med ett positivt random-nummer.
+	 */
 	@Test
 	public void testExpPositiveNumber() {
 		double num1 = 0;
@@ -75,6 +95,9 @@ public class AdvancedMethodsTest {
 			assertEquals(Math.round(am.exp(num1)), Math.round(result));
 		}
 	}
+	/**
+	 * Här testar vi Exp med ett negativt random-nummer.
+	 */
 	@Test
 	public void testExpNegativeNumber() {
 		double num1 = 0;
@@ -87,6 +110,9 @@ public class AdvancedMethodsTest {
 			assertEquals(Math.round(am.exp(num1)), Math.round(result));
 		}
 	}
+	/**
+	 * Här testar vi SquareRoot med ett positivt random-nummer.
+	 */
 	@Test
 	public void testSqrtPositiveNumber() {
 		double num1 = 0;
@@ -99,6 +125,9 @@ public class AdvancedMethodsTest {
 			assertEquals(Math.round(am.sqrt(num1)), Math.round(result));
 		}
 	}
+	/**
+	 * Här testar vi SquareRoot med ett negativt random-nummer.
+	 */
 	@Test
 	public void testSqrtNegativeNumber() {
 		double num1 = 0;
@@ -111,6 +140,9 @@ public class AdvancedMethodsTest {
 			assertEquals(Math.round(am.sqrt(num1)), Math.round(result));
 		}
 	}
+	/**
+	 * Här testar vi toRadians med ett positivt random-nummer.
+	 */
 	@Test
 	public void testToRadiansPositiveNumber() {
 		double num1 = 0;
@@ -123,6 +155,9 @@ public class AdvancedMethodsTest {
 			assertEquals(Math.round(am.toRadians(num1)), Math.round(result));
 		}
 	}
+	/**
+	 * Här testar vi toRadians med ett negativt random-nummer.
+	 */
 	@Test
 	public void testToRadiansNegativeNumber() {
 		double num1 = 0;
@@ -135,6 +170,9 @@ public class AdvancedMethodsTest {
 			assertEquals(Math.round(am.toRadians(num1)), Math.round(result));
 		}
 	}
+	/**
+	 * Här testar vi toDegrees med ett positivt random-nummer.
+	 */
 	@Test
 	public void testToDegreesPositiveNumber() {
 		double num1 = 0;
@@ -147,6 +185,9 @@ public class AdvancedMethodsTest {
 			assertEquals(Math.round(am.toDegrees(num1)), Math.round(result));
 		}
 	}
+	/**
+	 * Här testar vi toDegrees med ett negativt random-nummer.
+	 */
 	@Test
 	public void testToDegreesNegativeNumber() {
 		double num1 = 0;
