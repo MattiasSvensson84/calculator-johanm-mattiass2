@@ -109,7 +109,7 @@ public class BasicMethodsTest {
 			secondNumber = Double.valueOf(df.format(random.nextDouble() *50));
 			result = firstNumber - secondNumber;
 			
-			LOG.info("Testing the method add with: " + firstNumber + " and " + secondNumber + " with the result: " + result);
+			LOG.info("Testing the method subtract with: " + firstNumber + " and " + secondNumber + " with the result: " + result);
 			assertEquals(Math.round(bm.subtract(firstNumber, secondNumber)) , Math.round( result));
 		}
 	}
@@ -126,7 +126,7 @@ public class BasicMethodsTest {
 			secondNumber = Double.valueOf(df.format(random.nextDouble() *-50));
 			result = firstNumber - secondNumber;
 			
-			LOG.info("Testing the method add with: " + firstNumber + " and " + secondNumber + " with the result: " + result);
+			LOG.info("Testing the method subtract with: " + firstNumber + " and " + secondNumber + " with the result: " + result);
 			assertEquals(Math.round(bm.subtract(firstNumber, secondNumber)) , Math.round( result));
 		}
 	}
@@ -143,7 +143,7 @@ public class BasicMethodsTest {
 			secondNumber = Double.valueOf(df.format(random.nextDouble() *-50));
 			result = firstNumber - secondNumber;
 			
-			LOG.info("Testing the method add with: " + firstNumber + " and " + secondNumber + " with the result: " + result);
+			LOG.info("Testing the method subtract with: " + firstNumber + " and " + secondNumber + " with the result: " + result);
 			assertEquals(Math.round(bm.subtract(firstNumber, secondNumber)) , Math.round( result));
 		}
 	}
@@ -160,7 +160,7 @@ public class BasicMethodsTest {
 			secondNumber = Double.valueOf(df.format(random.nextDouble() *50));
 			result = firstNumber - secondNumber;
 			
-			LOG.info("Testing the method add with: " + firstNumber + " and " + secondNumber + " with the result: " + result);
+			LOG.info("Testing the method subtract with: " + firstNumber + " and " + secondNumber + " with the result: " + result);
 			assertEquals(Math.round(bm.subtract(firstNumber, secondNumber)) , Math.round( result));
 		}
 	}
@@ -173,8 +173,88 @@ public class BasicMethodsTest {
 
 			result = firstNumber - secondNumber;
 			
-			LOG.info("Testing the method add with: " + firstNumber + " and " + secondNumber + " with the result: " + result);
+			LOG.info("Testing the method subtract with: " + firstNumber + " and " + secondNumber + " with the result: " + result);
 			assertEquals(Math.round(bm.subtract(firstNumber, secondNumber)) , Math.round( result));
+		
+	}
+	@Test
+	public void multiplicationTestBothPositiveNumber() {
+		double firstNumber = 0;
+		double secondNumber = 0;
+		double result = 0;
+		
+		
+		for (int i = 0; i <= 50; i++){
+			firstNumber = Double.valueOf(df.format(random.nextDouble() *50));
+			secondNumber = Double.valueOf(df.format(random.nextDouble() *50));
+			result = firstNumber * secondNumber;
+			
+			LOG.info("Testing the method multiplication with: " + firstNumber + " and " + secondNumber + " with the result: " + result);
+			assertEquals(Math.round(bm.multiplication(firstNumber, secondNumber)) , Math.round( result));
+		}
+	}
+	
+	@Test
+	public void multiplicationTestBothNegativNumber() {
+		double firstNumber = 0;
+		double secondNumber = 0;
+		double result = 0;
+		
+		
+		for (int i = 0; i <= 50; i++){
+			firstNumber = Double.valueOf(df.format(random.nextDouble() *-50));
+			secondNumber = Double.valueOf(df.format(random.nextDouble() *-50));
+			result = firstNumber * secondNumber;
+			
+			LOG.info("Testing the method add with: " + firstNumber + " and " + secondNumber + " with the result: " + result);
+			assertEquals(Math.round(bm.multiplication(firstNumber, secondNumber)) , Math.round( result));
+		}
+	}
+	
+	@Test
+	public void multiplicationTestFirstPositiveSecondNegativNumber() {
+		double firstNumber = 0;
+		double secondNumber = 0;
+		double result = 0;
+		
+		
+		for (int i = 0; i <= 50; i++){
+			firstNumber = Double.valueOf(df.format(random.nextDouble() *50));
+			secondNumber = Double.valueOf(df.format(random.nextDouble() *-50));
+			result = firstNumber * secondNumber;
+			
+			LOG.info("Testing the method multiplication with: " + firstNumber + " and " + secondNumber + " with the result: " + result);
+			assertEquals(Math.round(bm.multiplication(firstNumber, secondNumber)) , Math.round( result));
+		}
+	}
+	
+	@Test
+	public void multiplicationTestFirstNegativSecondNegativNumber() {
+		double firstNumber = 0;
+		double secondNumber = 0;
+		double result = 0;
+		
+		
+		for (int i = 0; i <= 50; i++){
+			firstNumber = Double.valueOf(df.format(random.nextDouble() *-50));
+			secondNumber = Double.valueOf(df.format(random.nextDouble() *50));
+			result = firstNumber * secondNumber;
+			
+			LOG.info("Testing the method multiplication with: " + firstNumber + " and " + secondNumber + " with the result: " + result);
+			assertEquals(Math.round(bm.multiplication(firstNumber, secondNumber)) , Math.round( result));
+		}
+	}
+	@Test
+	public void multiplicationTestZero() {
+		double firstNumber = 0;
+		double secondNumber = 0;
+		double result = 0;
+		
+
+			result = firstNumber * secondNumber;
+			
+			LOG.info("Testing the method multiplication with: " + firstNumber + " and " + secondNumber + " with the result: " + result);
+			assertEquals(Math.round(bm.multiplication(firstNumber, secondNumber)) , Math.round( result));
 		
 	}
 
