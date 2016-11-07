@@ -258,4 +258,99 @@ public class BasicMethodsTest {
 		
 	}
 
+	@Test
+	public void divisionTestBothPositiveNumber() {
+		double firstNumber = 0;
+		double secondNumber = 0;
+		double result = 0;
+		
+		
+		for (int i = 0; i <= 50; i++){
+			firstNumber = Double.valueOf(df.format(random.nextDouble() *50 +1 ));
+			secondNumber = Double.valueOf(df.format(random.nextDouble() *50 +1));
+			result = firstNumber / secondNumber;
+			
+			LOG.info("Testing the method division with: " + firstNumber + " and " + secondNumber + " with the result: " + result);
+			assertEquals(Math.round(bm.division(firstNumber, secondNumber)) , Math.round( result));
+		}
+	}
+	
+	@Test
+	public void divisionTestBothNegativNumber() {
+		double firstNumber = 0;
+		double secondNumber = 0;
+		double result = 0;
+		
+		
+		for (int i = 0; i <= 50; i++){
+			firstNumber = Double.valueOf(df.format(random.nextDouble() *-50 -1));
+			secondNumber = Double.valueOf(df.format(random.nextDouble() *-50 -1 ));
+			result = firstNumber / secondNumber;
+			
+			LOG.info("Testing the method division with: " + firstNumber + " and " + secondNumber + " with the result: " + result);
+			assertEquals(Math.round(bm.division(firstNumber, secondNumber)) , Math.round( result));
+		}
+	}
+	
+	@Test
+	public void divisionTestFirstPositiveSecondNegativNumber() {
+		double firstNumber = 0;
+		double secondNumber = 0;
+		double result = 0;
+		
+		
+		for (int i = 0; i <= 50; i++){
+			firstNumber = Double.valueOf(df.format(random.nextDouble() *50 + 1 ));
+			secondNumber = Double.valueOf(df.format(random.nextDouble() *-50 -1));
+			result = firstNumber / secondNumber;
+			
+			LOG.info("Testing the method division with: " + firstNumber + " and " + secondNumber + " with the result: " + result);
+			assertEquals(Math.round(bm.division(firstNumber, secondNumber)) , Math.round( result));
+		}
+	}
+	
+	@Test
+	public void divisionTestFirstNegativSecondNegativNumber() {
+		double firstNumber = 0;
+		double secondNumber = 0;
+		double result = -0;
+		
+		
+		for (int i = 0; i <= 50; i++){
+			firstNumber = Double.valueOf(df.format(random.nextDouble() *-50 -1));
+			secondNumber = Double.valueOf(df.format(random.nextDouble() *50 +1));
+			result = firstNumber / secondNumber;
+			
+			LOG.info("Testing the method division with: " + firstNumber + " and " + secondNumber + " with the result: " + result);
+			assertEquals(Math.round(bm.division(firstNumber, secondNumber)) , Math.round( result));
+		}
+	}
+	@Test
+	public void divisionTestZero() {
+		double firstNumber = 0;
+		double secondNumber = 0;
+		double result = -0.123456789;
+		
+
+			result = firstNumber / secondNumber;
+			
+			LOG.info("Testing the method division with: " + firstNumber + " and " + secondNumber + " with the result: " + result);
+			assertEquals(Math.round(bm.division(firstNumber, secondNumber)) , Math.round( result));
+		
+	}
+	@Test
+	public void divisionTestFirstNegativSecondZeroNumber() {
+		double firstNumber = 0;
+		double secondNumber = 0;
+		double result = -0.123456789;
+		
+		
+		for (int i = 0; i <= 50; i++){
+			firstNumber = Double.valueOf(df.format(random.nextDouble() *-50 -1));
+			
+			LOG.info("Testing the method division with: " + firstNumber + " and " + secondNumber + " with the result: " + result);
+			assertEquals(Math.round(bm.division(firstNumber, secondNumber)) , Math.round( result));
+		}
+	}
+	
 }
